@@ -73,10 +73,9 @@ navContainer.addEventListener('click',(e)=>{
 const destination = document.querySelector('.intro img');
 
 destination.addEventListener('wheel',(e)=>{
-    e.target.style.transform ="scale(0.8)";
-    // e.target.style.transform = " translate(10px,200px)";
-         
-        e.target.style.border="2px dashed #4a4a4a";
+
+    gsap.to (destination,{rotation: 360, x: 100, duration: 5, scale:0.3, yoyo:true, repeat:2})
+   
         
         });
 // resize
@@ -91,11 +90,15 @@ destination.addEventListener('wheel',(e)=>{
 const introduction = document.querySelector('.intro p');
     introduction.addEventListener('select', (event)=>{
 
-    const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+    const selection = event.target.value.subString(event.target.selectionStart, event.target.selectionEnd);
+    event.target.style.fontSize = '20px';
+    // introduction.appendChild(selection);
        
    alert(`You selected: ${selection}`);
   
 });
+
+
 
    
 
